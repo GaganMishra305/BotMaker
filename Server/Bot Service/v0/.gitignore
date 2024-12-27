@@ -1,0 +1,7 @@
+# Temporary files
+chroma_db
+rag_app.db
+__pycache__
+
+#obviously
+.env

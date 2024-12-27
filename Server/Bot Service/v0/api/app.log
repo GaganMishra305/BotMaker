@@ -1,0 +1,27 @@
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+INFO:root:Session ID: None, User Query: what is the pdf about?, Model: gpt-4o-mini
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Session ID: b1cb299a-3d30-4460-9763-15fbe6f2dc28, AI Response: The PDF appears to detail the EcoHarvest System developed by GreenGrow, which is designed to enhance agricultural practices through advanced technology. Key features include:
+
+1. **Integration with Weather Forecasting**: This allows for better long-term planning in farming operations.
+2. **Soil Health Management**: The system uses advanced sensors to monitor soil composition, pH levels, and nutrient content, creating detailed soil maps and providing recommendations for optimal fertilizer application, which helps reduce chemical usage.
+3. **Automated Harvesting**: It utilizes computer vision and robotic arms to identify and harvest ripe crops with minimal human intervention, leading to reduced labor costs and less crop waste.
+4. **Improved Crop Yields**: Farmers using the EcoHarvest System have reported significant increases in crop yields (20-30% compared to traditional methods).
+5. **Environmental Sustainability**: The system promotes resource efficiency, helping farms decrease their environmental impact and improve sustainability ratings.
+
+Overall, the PDF outlines the benefits and innovations of the EcoHarvest System in modern farming practices.
+INFO:root:Session ID: b1cb299a-3d30-4460-9763-15fbe6f2dc28, User Query: what is it again?, Model: gpt-4o-mini
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/embeddings "HTTP/1.1 200 OK"
+INFO:httpx:HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 200 OK"
+INFO:root:Session ID: b1cb299a-3d30-4460-9763-15fbe6f2dc28, AI Response: The PDF discusses the EcoHarvest System created by GreenGrow Innovations, which is a comprehensive agricultural technology solution introduced in 2018. Key features of the EcoHarvest System include:
+
+1. **AI-Powered Control Unit**: It processes data from various sensors on the farm to optimize crop growth and resource use.
+2. **Smart Irrigation Module**: Uses precision sprinklers and drip irrigation to reduce water usage by up to 40% compared to traditional methods.
+3. **Real-Time Data Analysis**: Analyzes data from soil moisture sensors, weather stations, and crop growth monitors to inform decisions about irrigation, fertilization, and pest control.
+4. **Integration with Weather Forecasting**: Enhances long-term planning for farming operations.
+5. **Crop Rotation Management**: Helps improve soil health and biodiversity.
+6. **Automated Harvesting**: Utilizes robotics and computer vision to efficiently harvest crops.
+
+Overall, the EcoHarvest System is designed to enhance agricultural efficiency, increase crop yields, and promote sustainability in farming practices.
