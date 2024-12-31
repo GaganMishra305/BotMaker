@@ -1,20 +1,23 @@
+from contextlib import asynccontextmanager
 from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
-# 1. Main app
-app = FastAPI()
+from Db.get_db import connect_db, disconnect_db, get_db
 
+# 1. Db
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # app starts
+    connect_db()
+    # app is on
+    yield
+    # app shutdowns
+    disconnect_db()
+    
 # ------------------------------------------------------------------------------
 
-# 2. Getting db
-from Db.get_db import connect_db, get_db
-@app.on_event("startup")
-def startup():
-    connect_db()  # Initialize the database connection
-
-@app.on_event("shutdown")
-def shutdown():
-    print("Shutting down application. Cleanup if needed.")
+# 2. Main app
+app = FastAPI(lifespan=lifespan)
 
 # -------------------------------------------------------------------------------
 

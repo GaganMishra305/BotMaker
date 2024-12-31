@@ -25,3 +25,9 @@ def get_db():
     if db_instance is None:
         raise RuntimeError("Database not initialized.")
     return db_instance
+
+def disconnect_db():
+    global db_instance
+    if db_instance:
+        db_instance = None
+        print("Disconnected from Astra DB")
