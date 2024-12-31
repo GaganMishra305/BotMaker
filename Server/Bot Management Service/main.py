@@ -27,8 +27,8 @@ from Routes.BotRouter import bot_router
 
 @app.get("/")
 async def root(db=Depends(get_db)):
-    print(db)
     return {"message": "Welcome to Bot Maker!"}
+
 app.include_router(user_router, prefix="/user", tags=["User"])
 app.include_router(bot_router, prefix="/bot", tags=["Products"])
 
