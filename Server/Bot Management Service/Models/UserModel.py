@@ -13,3 +13,14 @@ class User(BaseModel):
     password: str
     created_at: datetime = Field(default_factory=datetime.utcnow)
     
+    def verify_password(self, password: str) -> bool:
+        return pwd_context.verify(password, self.password)
+    
+    def to_db(self) -> dict:
+        return {
+            "id": str(self.id),
+            "username": self.username,
+            "email": self.email,
+            "password": pwd_context.hash(self.password), 
+            "created_at": self.created_at.isoformat()
+        }
