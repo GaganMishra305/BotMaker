@@ -6,7 +6,7 @@ from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
 from Db.get_db import get_db
 from Models.RequestModel import Token, UserRequestModel
 from Models.UserModel import User
-from Controllers.UserController import authenticate_user, create_access_token, get_current_active_user, get_user_by_id_or_username_fn, create_user_fn
+from Controllers.UserController import authenticate_user, create_access_token, get_all_users_fn, get_current_active_user, get_user_by_id_or_username_fn, create_user_fn
 from dotenv import load_dotenv
 
 load_dotenv('.env')
@@ -26,6 +26,11 @@ async def create_user(user: UserRequestModel, db = Depends(get_db)):
         raise HTTPException(status_code=403, detail="Failed to create user.")
 
 # 2. Read
+@user_router.get("/")
+async def get_all_users(db = Depends(get_db)):
+    users = await get_all_users_fn(db)
+    return users
+
 @user_router.get("/id")
 async def get_user_by_id_or_username(id: str, db=Depends(get_db)):
     user = await get_user_by_id_or_username_fn(id, db)

@@ -13,6 +13,11 @@ from dotenv import load_dotenv
 
 load_dotenv('.env')
 # 1. crud
+async def get_all_users_fn(db):
+    user_collection = db.users
+    users = user_collection.find()
+    return list(users)
+
 async def get_user_by_id_or_username_fn(id: str, db):
     user_collection = db.users    
     user = user_collection.find_one({"_id" : id})
